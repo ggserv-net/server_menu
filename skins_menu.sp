@@ -5,7 +5,7 @@ public Plugin:myinfo =
     name        = "Skins menu",
     author      = "GGSERV.NET",
     description = "Skins menu",
-    version     = "1.0",
+    version     = "1.0.1",
     url         = "https://ggserv.net"
 }
 
@@ -13,11 +13,12 @@ new Handle: g_skins_menu;
 
 public OnPluginStart()
 {
+    RegConsoleCmd("sm_skin", Command_OpenMenu_skins_menu);
     RegConsoleCmd("sm_skins", Command_OpenMenu_skins_menu);
 
     g_skins_menu = CreateMenu(Handler_skins_menu);
-    SetMenuTitle(g_skins_menu, "Выбор скинов:")
-    AddMenuItem(g_skins_menu, "1", "Оружие")
+    SetMenuTitle(g_skins_menu, "Меню скинов:")
+    AddMenuItem(g_skins_menu, "1", "Скины оружия")
     AddMenuItem(g_skins_menu, "2", "Ножи")
     AddMenuItem(g_skins_menu, "3", "Перчатки")
 }
@@ -48,7 +49,7 @@ public Handler_skins_menu(Handle:menu, MenuAction:action, client, slot)
             }
             else if (StrEqual(info, "3"))
             {
-                ServerCommand("sm_gloves");
+                FakeClientCommand(client, "sm_gloves");
             }
         }
     }
