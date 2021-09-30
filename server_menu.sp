@@ -70,17 +70,17 @@ public OnPluginStart()
     AddMenuItem(g_rules_menu, "1", "ВНИМАНИЕ!!! Незнание правил не освобождает от ответственности!", ITEMDRAW_DISABLED)
     AddMenuItem(g_rules_menu, "2", " ", ITEMDRAW_DISABLED)
     AddMenuItem(g_rules_menu, "3", "Полный текст правил тут:", ITEMDRAW_DISABLED)
-    AddMenuItem(g_rules_menu, "4", "https://go.ggserv.net/r")
+    AddMenuItem(g_rules_menu, "4", "go.ggserv.net/r")
     AddMenuItem(g_rules_menu, "5", " ", ITEMDRAW_DISABLED)
     AddMenuItem(g_rules_menu, "6", "Ведите себя хорошо ^_-", ITEMDRAW_DISABLED)
     SetMenuExitBackButton(g_rules_menu, true);
 
     g_about_menu = CreateMenu(Handler_about_menu);
     SetMenuTitle(g_about_menu, "О проекте GGSERV.NET")
-    AddMenuItem(g_about_menu, "1", "Telegram: http://go.ggserv.net/tg")
-    AddMenuItem(g_about_menu, "2", "Vkontakte: http://go.ggserv.net/vk")
-    AddMenuItem(g_about_menu, "3", "Discord: http://go.ggserv.net/discord")
-    AddMenuItem(g_about_menu, "4", "Steam: http://go.ggserv.net/steam")
+    AddMenuItem(g_about_menu, "1", "Telegram: go.ggserv.net/tg")
+    AddMenuItem(g_about_menu, "2", "Vkontakte: go.ggserv.net/vk")
+    AddMenuItem(g_about_menu, "3", "Discord: go.ggserv.net/discord")
+    AddMenuItem(g_about_menu, "4", "Steam: go.ggserv.net/steam")
     SetMenuExitBackButton(g_about_menu, true);
 }
 
@@ -228,19 +228,19 @@ public Handler_about_menu(Handle:menu, MenuAction:action, client, slot)
 
             if (StrEqual(info, "1"))
             {
-                CCPrintToChat(client, "%s Telegram: http://go.ggserv.net/tg", g_sPrefix);
+                CCPrintToChat(client, "%s Telegram: https://go.ggserv.net/tg", g_sPrefix);
             }
             else if (StrEqual(info, "2"))
             {
-                CCPrintToChat(client, "%s Vk: http://go.ggserv.net/vk", g_sPrefix);
+                CCPrintToChat(client, "%s Vk: https://go.ggserv.net/vk", g_sPrefix);
             }
             else if (StrEqual(info, "3"))
             {
-                CCPrintToChat(client, "%s Discord: http://go.ggserv.net/discord", g_sPrefix);
+                CCPrintToChat(client, "%s Discord: https://go.ggserv.net/discord", g_sPrefix);
             }
             else if (StrEqual(info, "4"))
             {
-                CCPrintToChat(client, "%s Steam: http://go.ggserv.net/steam", g_sPrefix);
+                CCPrintToChat(client, "%s Steam: https://go.ggserv.net/steam", g_sPrefix);
             }
         }
         case MenuAction_Cancel:
