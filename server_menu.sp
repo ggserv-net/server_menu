@@ -11,7 +11,7 @@ public Plugin:myinfo =
     url         = "https://github.com/ggserv-net/server_menu"
 }
 
-char g_sPrefix[100] = "{GRAY}[{LIGHTRED}Меню{GRAY}] {DEFAULT}";
+char g_sPrefix[100] = "{GRAY}[{LIGHTRED}Меню{GRAY}]{DEFAULT}";
 bool g_bCSGO;
 
 new Handle: g_about_menu;
@@ -204,7 +204,7 @@ public Handler_rules_menu(Handle:menu, MenuAction:action, client, slot)
             
             if (StrEqual(info, "4"))
             {
-                CCPrintToChat(client, "%s Правила проекта: https://go.ggserv.net/r", g_sPrefix);
+                CCPrintToChat(client, "%s Правила проекта {RED}▶ {LIGHTRED}https://go.ggserv.net/r", g_sPrefix);
             }
         }
         case MenuAction_Cancel:
@@ -228,19 +228,19 @@ public Handler_about_menu(Handle:menu, MenuAction:action, client, slot)
 
             if (StrEqual(info, "1"))
             {
-                CCPrintToChat(client, "%s Telegram: https://go.ggserv.net/tg", g_sPrefix);
+                CCPrintToChat(client, "%s Telegram {RED}▶ {LIGHTRED}https://go.ggserv.net/tg", g_sPrefix);
             }
             else if (StrEqual(info, "2"))
             {
-                CCPrintToChat(client, "%s Vk: https://go.ggserv.net/vk", g_sPrefix);
+                CCPrintToChat(client, "%s Vk {RED}▶ {LIGHTRED}https://go.ggserv.net/vk", g_sPrefix);
             }
             else if (StrEqual(info, "3"))
             {
-                CCPrintToChat(client, "%s Discord: https://go.ggserv.net/discord", g_sPrefix);
+                CCPrintToChat(client, "%s Discord {RED}▶ {LIGHTRED}https://go.ggserv.net/discord", g_sPrefix);
             }
             else if (StrEqual(info, "4"))
             {
-                CCPrintToChat(client, "%s Steam: https://go.ggserv.net/steam", g_sPrefix);
+                CCPrintToChat(client, "%s Steam {RED}▶ {LIGHTRED}https://go.ggserv.net/steam", g_sPrefix);
             }
         }
         case MenuAction_Cancel:
