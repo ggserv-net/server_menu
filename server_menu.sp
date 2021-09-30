@@ -53,6 +53,7 @@ public OnPluginStart()
     AddMenuItem(g_main_menu, "4", "Скины")
     AddMenuItem(g_main_menu, "5", "Обнулить счет")
     AddMenuItem(g_main_menu, "6", "Список админов")
+    AddMenuItem(g_main_menu, "7", "О проекте")
 
     g_skins_menu = CreateMenu(Handler_skins_menu);
     SetMenuTitle(g_skins_menu, "Меню скинов:")
@@ -156,6 +157,10 @@ public Handler_main_menu(Handle:menu, MenuAction:action, client, slot)
             else if (StrEqual(info, "6"))
             {
                 FakeClientCommand(client, "sm_admins");
+            }
+            else if (StrEqual(info, "7"))
+            {
+                FakeClientCommand(client, "sm_about");
             }
         }
     }
