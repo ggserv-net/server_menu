@@ -41,8 +41,11 @@ public OnPluginStart()
 
     g_rules_menu = CreateMenu(Handler_rules_menu);
     SetMenuTitle(g_rules_menu, "Правила проекта:")
-    AddMenuItem(g_rules_menu, "1", "Ведите себя хорошо ^_^", ITEMDRAW_DISABLED)
-    AddMenuItem(g_rules_menu, "2", "Полный текст правил тут: https://go.ggserv.net/r", ITEMDRAW_DISABLED)
+    AddMenuItem(g_rules_menu, "1", "ВНИМАНИЕ!!! Незнание правил не освобождает от ответственности!", ITEMDRAW_DISABLED)
+    AddMenuItem(g_rules_menu, "2", " ", ITEMDRAW_DISABLED)
+    AddMenuItem(g_rules_menu, "3", "Полный текст правил тут: https://go.ggserv.net/r", ITEMDRAW_DISABLED)
+    AddMenuItem(g_rules_menu, "4", " ", ITEMDRAW_DISABLED)
+    AddMenuItem(g_rules_menu, "5", "Ведите себя хорошо ^_-", ITEMDRAW_DISABLED)
     SetMenuExitBackButton(g_rules_menu, true);
 
     g_main_menu = CreateMenu(Handler_main_menu);
