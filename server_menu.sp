@@ -7,7 +7,7 @@ public Plugin:myinfo =
     name        = "Server menu",
     author      = "GGSERV.NET",
     description = "Server menu",
-    version     = "1.0.4",
+    version     = "1.0.5",
     url         = "https://github.com/ggserv-net/server_menu"
 }
 
@@ -54,8 +54,9 @@ public OnPluginStart()
     AddMenuItem(g_main_menu, "3", "Статистика игрока")
     AddMenuItem(g_main_menu, "4", "Скины")
     AddMenuItem(g_main_menu, "5", "Обнулить счет")
-    AddMenuItem(g_main_menu, "6", "Список админов")
-    AddMenuItem(g_main_menu, "7", "О проекте")
+    AddMenuItem(g_main_menu, "6", "Музыка")
+    AddMenuItem(g_main_menu, "7", "Список админов")
+    AddMenuItem(g_main_menu, "8", "О проекте")
 
     g_skins_menu = CreateMenu(Handler_skins_menu);
     SetMenuTitle(g_skins_menu, "Меню скинов:")
@@ -146,9 +147,13 @@ public Handler_main_menu(Handle:menu, MenuAction:action, client, slot)
             }
             else if (StrEqual(info, "6"))
             {
-                FakeClientCommand(client, "sm_admins");
+                FakeClientCommand(client, "sm_res");
             }
             else if (StrEqual(info, "7"))
+            {
+                FakeClientCommand(client, "sm_admins");
+            }
+            else if (StrEqual(info, "8"))
             {
                 FakeClientCommand(client, "sm_about");
             }
@@ -199,7 +204,6 @@ public Handler_rules_menu(Handle:menu, MenuAction:action, client, slot)
             
             if (StrEqual(info, "4"))
             {
-                //ServerCommand("say \"Правила проекта: https://go.ggserv.net/r\"");
                 CCPrintToChat(client, "%s Правила проекта: https://go.ggserv.net/r", g_sPrefix);
             }
         }
@@ -224,22 +228,18 @@ public Handler_about_menu(Handle:menu, MenuAction:action, client, slot)
 
             if (StrEqual(info, "1"))
             {
-                //ServerCommand("say \"Telegram: http://go.ggserv.net/tg\"");
                 CCPrintToChat(client, "%s Telegram: http://go.ggserv.net/tg", g_sPrefix);
             }
             else if (StrEqual(info, "2"))
             {
-                //ServerCommand("say \"Vkontakte: http://go.ggserv.net/vk\"");
                 CCPrintToChat(client, "%s Vk: http://go.ggserv.net/vk", g_sPrefix);
             }
             else if (StrEqual(info, "3"))
             {
-                //ServerCommand("say \"Discord: http://go.ggserv.net/discord\"");
                 CCPrintToChat(client, "%s Discord: http://go.ggserv.net/discord", g_sPrefix);
             }
             else if (StrEqual(info, "4"))
             {
-                //ServerCommand("say \"Steam: http://go.ggserv.net/steam\"");
                 CCPrintToChat(client, "%s Steam: http://go.ggserv.net/steam", g_sPrefix);
             }
         }
